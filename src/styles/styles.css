@@ -13,8 +13,15 @@ a {
 
 ul li {
     list-style: none;
+
 }
 
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 50px 20px 0;
+}
 
 .header {
     display: flex;
@@ -45,4 +52,52 @@ ul li {
 
 .header .menu .item-menu:hover {
     transform: scale(1.15);   
+}
+
+
+.section-welcome {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    align-items: center ;
+}
+
+.welcome-content {
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+
+}
+
+.welcome-content h1 {
+    font-size: 4rem; 
+    font-weight: 700; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    margin: 0;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-content h1 span {
+    color: #23C259;
+}
+
+.welcome-content p {
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+.welcome-content p span {
+    font-weight: bold;
+}
+
+.welcome-icone {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.welcome-icone img {
+    width: 85%;
 }
