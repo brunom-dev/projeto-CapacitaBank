@@ -7,21 +7,44 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./src/styles/styles.css">
+    <link rel="stylesheet" href="./src/styles/responsive.css">
 
     <!-- JS -->
     <script src="./src/js/main.js" defer></script>
+    <script src="./src/js/menuResponsive.js" defer></script>
 </head>
 <body>
     <header class="header">
         <img src="./src/assets/logo-semfundo.png" alt="Logo da empresa ficticia Capacita Bank" class="logo">
 
-        <ul class="menu">
+        <ul class="menu-desktop" id="menu-desktop">
             <li><a href="#home" class="item-menu">Home</a></li>
             <li><a href="#quem-somos" class="item-menu">Quem somos</a></li>
             <li><a href="#saque-bancario" class="item-menu">Saque Bancario</a></li>
             <li><a href="#contato" class="item-menu">Contato</a></li>
         </ul>
-    </header>
+
+
+
+        <div class="mobile-menu-icon">
+            <button onClick="menuShow()"><img src="./src/assets/menuMobile/button_mobile.svg" alt="" id="btn-menu-mobile"></button>
+        </div>
+    </header>   
+
+    <ul class="menu-mobile" id="menu-mobile">
+        <li>
+            <a href="#home" class="item-menu-mobile">Home</a>
+        </li>
+        <li>
+            <a href="#quem-somos" class="item-menu-mobile">Quem somos</a>
+        </li>
+        <li>
+            <a href="#saque-bancario" class="item-menu-mobile">Saque Bancario</a>
+        </li>
+        <li>
+            <a href="#contato" class="item-menu-mobile">Contato</a>
+        </li>
+    </ul>
 
 
     <section class="container section-welcome" id="#home">
