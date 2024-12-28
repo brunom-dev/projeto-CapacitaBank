@@ -11,7 +11,7 @@ const validaSaque = (valorSaque) => {
         return false
     }
 
-    if (!Number.isInteger(valorSaque)) {
+    if (!Number.isInteger(valorSaque) || !verificarMultiplo(valorSaque)) {
         statusValidacao.innerHTML = "O valor digitado não é multiplo das notas disponíveis no momento.<br> Tente novamente!"
         return false
     }
@@ -64,6 +64,15 @@ const processamentoSaque = (valorSaque) => {
 
     return [cedulas.qtd100, cedulas.qtd50, cedulas.qtd20, cedulas.qtd10, cedulas.qtd5, cedulas.qtd2]
 }
+
+const verificarMultiplo = (numero) => {
+    if ((numero % 2) === 0 || numero % 5 === 0) {
+        return true;
+    } else {
+        return false
+    }
+}
+
 
 
 export {validaSaque, processamentoSaque};
