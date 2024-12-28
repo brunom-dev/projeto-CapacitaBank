@@ -78,13 +78,10 @@ const processamentoSaque = (valorSaque) => {
             cedulas.qtd2 += 3;
         }
 
-
     }
 
     return cedulas;
 }
-
-
 
 const renderizacao = (cedulas) => {
     

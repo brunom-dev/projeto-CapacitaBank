@@ -23,5 +23,4 @@ btnSaque.addEventListener("click", () => {
     let cedulas = processamentoSaque(valorSaque);
 
     renderizacao(cedulas)
-
 })
