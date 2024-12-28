@@ -62,7 +62,7 @@ const processamentoSaque = (valorSaque) => {
 
     }
 
-    return [cedulas.qtd100, cedulas.qtd50, cedulas.qtd20, cedulas.qtd10, cedulas.qtd5, cedulas.qtd2]
+    return cedulas;
 }
 
 const verificarMultiplo = (numero) => {
@@ -73,6 +73,37 @@ const verificarMultiplo = (numero) => {
     }
 }
 
+const renderizacao = (cedulas) => {
+    
+    const tituloResultados = document.querySelector("#resultados h3")
+    const listaCedulas = document.querySelector("#listaCedulas");
+    
+    tituloResultados.style = "display: block;"
+    listaCedulas.innerHTML = "";
 
+    if (cedulas.qtd100 > 0) {
+        listaCedulas.innerHTML += `<li>${cedulas.qtd100}x <img src="./src/assets/cedulas/100reais.jpg"></li>` 
+    }
+    
+    if (cedulas.qtd50 > 0) {
+        listaCedulas.innerHTML += `<li>${cedulas.qtd50}x <img src="./src/assets/cedulas/50reais.jpg"></li>` 
+    }
+    
+    if (cedulas.qtd20 > 0) {
+        listaCedulas.innerHTML += `<li>${cedulas.qtd20}x <img src="./src/assets/cedulas/20reais.jpg"></li>` 
+    }
+    
+    if (cedulas.qtd10 > 0) {
+        listaCedulas.innerHTML += `<li>${cedulas.qtd10}x <img src="./src/assets/cedulas/10reais.jpg"></li>` 
+    }
+    
+    if (cedulas.qtd5 > 0) {
+        listaCedulas.innerHTML += `<li>${cedulas.qtd5}x <img src="./src/assets/cedulas/5reais.jpg"></li>` 
+    }
 
-export {validaSaque, processamentoSaque};
+    if (cedulas.qtd2 > 0) {
+        listaCedulas.innerHTML += `<li>${cedulas.qtd2}x <img src="./src/assets/cedulas/2reais.jpg"></li>` 
+    }
+}
+
+export {validaSaque, processamentoSaque, renderizacao};

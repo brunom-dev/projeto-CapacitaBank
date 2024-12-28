@@ -191,6 +191,38 @@
     font-size: 20px;
 }
 
+
+#resultados {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    padding: 10px 20px;
+    text-align: center;
+    gap: 30px;
+}
+
+#resultados h3 {
+    display: none;
+}
+
+#resultados ul {
+    display: flex;
+    gap: 30px;
+}
+
+#resultados li {
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+#resultados img {
+    width: 65px;
+}
+
 /* -------------------------------------------------------------------- */
 
 .section-quemsomos {

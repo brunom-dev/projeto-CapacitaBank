@@ -1,5 +1,6 @@
 import { validaSaque } from "./funcionalidades.js";
 import { processamentoSaque } from "./funcionalidades.js";
+import { renderizacao } from "./funcionalidades.js";
 
 
 const inputSaque = document.querySelector("#input-saque");
@@ -18,15 +19,9 @@ btnSaque.addEventListener("click", () => {
     
     inputSaque.classList.remove("incorrect")
     inputSaque.classList.add("correct")
-    console.log("passou validacao")
-    let cedulas = processamentoSaque(valorSaque)
 
-    console.log(`
-        Notas de 100: ${cedulas[0]}
-        Notas de 50: ${cedulas[1]}
-        Notas de 20: ${cedulas[2]}
-        Notas de 10: ${cedulas[3]}
-        Notas de 5: ${cedulas[4]}
-        Notas de 2: ${cedulas[5]}
-    `)
+    let cedulas = processamentoSaque(valorSaque);
+
+    renderizacao(cedulas)
+
 })
