@@ -208,6 +208,7 @@
 #resultados ul {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 #resultados li {
