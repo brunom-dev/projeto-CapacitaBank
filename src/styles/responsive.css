@@ -46,6 +46,12 @@
     transform: translateY(0);
 }
 
+@media screen and (max-width: 1060px) {
+    .welcome-content h1 {
+        font-size: 3rem; 
+    }
+    
+}
 
 
 @media screen and (max-width: 968px) {
@@ -63,5 +69,115 @@
 
     .mobile-menu-icon {
         display: block;
+    }
+
+    .caixa-eletronico .box-informacoes h3 {
+        display: none;
+    }
+
+    .caixa-eletronico .box-informacoes > img {
+        width: 150px;
+    }
+    
+}
+
+@media screen and (max-width: 880px) {
+    .section-welcome {
+        align-items: center ;
+        justify-self: center;
+        flex-direction: column;
+    }
+
+    .welcome-content {
+        width: 90%;
+    }
+
+    .welcome-icone {
+        width: 60%;
+    }
+
+    .section-quemsomos {
+        margin-top: 20px;
+        padding-bottom: 0;
+        align-items: center ;
+        justify-self: center;
+        flex-direction: column-reverse;
+    }
+
+    .section-quemsomos .quemsomos-info {
+        width: 90%;
+    }
+
+    .section-quemsomos .quemsomos-icone {
+        margin-top: 20px;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 778px) {
+
+    .caixa-eletronico .logo {
+        width: 50px;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+    }
+
+    .section-saque .caixa-eletronico {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        flex-direction: column;
+        padding: 50px 0;
+    }
+
+    .caixa-eletronico .box-informacoes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;  
+        width: 100%;
+    }
+
+    .caixa-eletronico .box-notas img {
+        width: 40px;
+    }
+
+    .caixa-eletronico .box-operacoes {
+        width: 100%;
+        padding: 25px 20px 120px ;
+    } 
+
+    .caixa-eletronico .box-operacoes input {
+        font-size: 18px;
+    }
+}
+
+
+
+@media screen and (max-width: 550px) {
+    .welcome-content h1 {
+        font-size: 2.2rem; 
+    }
+
+    .welcome-content p {
+        font-size: 16px;
+    }
+
+    .section-quemsomos .quemsomos-info p {
+        font-size: 16px;
+    }
+
+    .titulo-section {
+        font-size: 2rem ;
+    }
+
+    .welcome-icone {
+        width: 110%;
+    }
+
+    .section-quemsomos .quemsomos-icone {
+        width: 90%;
     }
 }
