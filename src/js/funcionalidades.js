@@ -21,5 +21,49 @@ const validaSaque = (valorSaque) => {
 
 }
 
+const processamentoSaque = (valorSaque) => {
+    let valor = valorSaque;
+    
+    const cedulas = {
+        qtd100: 0, qtd50: 0, qtd20: 0,
+        qtd10: 0, qtd5: 0, qtd2: 0
+    }
 
-export {validaSaque};
+    while (valor != 0) {
+        while (valor >= 100) {
+            valor = valor - 100;
+            cedulas.qtd100++;
+        }
+
+        while (valor >= 50) {
+            valor = valor - 50;
+            cedulas.qtd50++;;
+        }
+
+        while (valor >= 20) {
+            valor = valor - 20;
+            cedulas.qtd20++;
+        }
+
+        while (valor >= 10) {
+            valor = valor - 10;
+            cedulas.qtd10++;
+        }
+
+        while (valor >= 5) {
+            valor = valor - 5;
+            cedulas.qtd5++;
+        }
+
+        while (valor >= 2) {
+            valor = valor - 2;
+            cedulas.qtd2++;
+        }
+
+    }
+
+    return [cedulas.qtd100, cedulas.qtd50, cedulas.qtd20, cedulas.qtd10, cedulas.qtd5, cedulas.qtd2]
+}
+
+
+export {validaSaque, processamentoSaque};
