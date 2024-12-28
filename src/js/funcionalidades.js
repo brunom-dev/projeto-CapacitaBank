@@ -55,10 +55,29 @@ const processamentoSaque = (valorSaque) => {
             cedulas.qtd5++;
         }
 
+        if (valor === 3) {
+            valor += 10;
+            cedulas.qtd10--;
+            
+            valor = valor - 13;
+            cedulas.qtd5++;
+            cedulas.qtd2 += 4;
+        }
+
         while (valor >= 2) {
             valor = valor - 2;
             cedulas.qtd2++;
         }
+
+        if (valor === 1) {
+            valor += 10;
+            cedulas.qtd10--;
+            
+            valor = valor - 11;
+            cedulas.qtd5++;
+            cedulas.qtd2 += 3;
+        }
+
 
     }
 
