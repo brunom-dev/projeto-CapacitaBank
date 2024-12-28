@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="./src/styles/responsive.css">
 
     <!-- JS -->
-    <script src="./src/js/main.js" defer></script>
     <script src="./src/js/menuResponsive.js" defer></script>
+    <script src="./src/js/funcionalidades.js" type="module" defer></script>
+    <script src="./src/js/main.js" type="module" defer></script>
 </head>
 <body>
     <header class="header">
@@ -107,7 +108,8 @@
             </div>
 
             <div class="box-operacoes">
-                <input type="number" placeholder="Digite o valor do saque" id="input-saque">
+                <input type="number" class="red" placeholder="Digite o valor do saque (R$)" id="input-saque" value="">
+                <span id="status-validacao"></span>
                 <button id="btn-confirmar">Confirmar</button>
 
 
@@ -115,10 +117,7 @@
                 </div>
             </div>
 
-
-
-
-            <img src="./src/assets/logo-semfundo.png" alt="" class="logo">
+            <img src="./src/assets/logoCapacitaBank/logo-semfundo.png" class="logo">
         </div>
     </main>
 
