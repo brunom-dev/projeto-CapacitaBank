@@ -12,7 +12,7 @@ const validaSaque = (valorSaque) => {
     }
 
     if (!Number.isInteger(valorSaque) || valorSaque === 1 || valorSaque === 3) {
-        statusValidacao.innerHTML = "O valor digitado não é multiplo das notas disponíveis no momento.<br> Tente novamente!"
+        statusValidacao.innerHTML = "O valor digitado não é multiplo das notas disponíveis no momento."
         return false
     }
 
@@ -23,6 +23,7 @@ const validaSaque = (valorSaque) => {
 
 const processamentoSaque = (valorSaque) => {
     let valor = valorSaque;
+    let valorAnterior;
     
     const cedulas = {
         qtd100: 0, qtd50: 0, qtd20: 0,
@@ -33,22 +34,37 @@ const processamentoSaque = (valorSaque) => {
         while (valor >= 100) {
             valor = valor - 100;
             cedulas.qtd100++;
+            valorAnterior = 100
         }
 
         while (valor >= 50) {
             valor = valor - 50;
             cedulas.qtd50++;;
+            valorAnterior = 50
         }
 
         while (valor >= 20) {
             valor = valor - 20;
             cedulas.qtd20++;
+            valorAnterior = 20
         }
 
         while (valor >= 10) {
             valor = valor - 10;
             cedulas.qtd10++;
+            valorAnterior = 10
         }
+
+        if (valor === 8) {
+            valor = valor - 8;
+            cedulas.qtd2+=4;
+        }        
+        
+        if (valor === 6) {
+            valor = valor - 6;
+            cedulas.qtd2+=3;
+        }
+
 
         while (valor >= 5) {
             valor = valor - 5;
@@ -70,12 +86,51 @@ const processamentoSaque = (valorSaque) => {
         }
 
         if (valor === 1) {
-            valor += 10;
-            cedulas.qtd10--;
+
+
+            if (valorAnterior === 100) {
+                valor += valorAnterior;
+
+                cedulas.qtd100--;
+                valor -= 101;
+
+                cedulas.qtd50++;
+                cedulas.qtd20+=2;
+                cedulas.qtd5++;
+                cedulas.qtd2+=3
+            }
+
             
-            valor = valor - 11;
-            cedulas.qtd5++;
-            cedulas.qtd2 += 3;
+            if (valorAnterior === 50) {
+                valor += valorAnterior;
+                
+                cedulas.qtd50--;
+                valor -= 51;
+
+                cedulas.qtd20+=2;
+                cedulas.qtd5++;
+                cedulas.qtd2+=3
+            }
+
+            if (valorAnterior === 20) {
+                valor += valorAnterior;
+                
+                cedulas.qtd20--;
+                valor -= 21;
+
+                cedulas.qtd5+=3;
+                cedulas.qtd2+=3
+            }
+
+            if (valorAnterior === 10) {
+                valor += valorAnterior;
+                
+                cedulas.qtd10--;
+                valor -= 11;
+
+                cedulas.qtd5++;
+                cedulas.qtd2+=3
+            }
         }
 
     }
@@ -85,10 +140,10 @@ const processamentoSaque = (valorSaque) => {
 
 const renderizacao = (cedulas) => {
     
-    const tituloResultados = document.querySelector("#resultados h3")
+    const resultados = document.querySelector("#resultados")
     const listaCedulas = document.querySelector("#listaCedulas");
     
-    tituloResultados.style = "display: block;"
+    resultados.style = "display: flex;"
     listaCedulas.innerHTML = "";
 
     if (cedulas.qtd100 > 0) {

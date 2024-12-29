@@ -193,7 +193,7 @@
 
 
 #resultados {
-    display: flex;
+    display: none;
     flex-direction: column;
     margin-top: 40px;
     padding: 10px 20px;
@@ -201,9 +201,6 @@
     gap: 30px;
 }
 
-#resultados h3 {
-    display: none;
-}
 
 #resultados ul {
     display: flex;

@@ -5,10 +5,12 @@ import { renderizacao } from "./funcionalidades.js";
 
 const inputSaque = document.querySelector("#input-saque");
 const btnSaque = document.querySelector("#btn-confirmar");
-
+const resultados = document.querySelector("#resultados")
 
 btnSaque.addEventListener("click", () => {
     
+    resultados.style = "display: none;"
+
     let valorSaque = Number(inputSaque.value.replace(",", "."));
 
     if (!validaSaque(valorSaque)){
